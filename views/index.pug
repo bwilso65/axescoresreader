@@ -1,4 +1,7 @@
 extends layout
 
 block content
+  div(class=['alert', 'alert-danger', 'error'] role='alert') !{error}
   div(class=["datacontainer"] style={display:'none'}) !{tables}
+  div(class=["container-fluid"])
+    div(class="row")

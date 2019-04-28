@@ -37,3 +37,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const server = app.listen(3000, () => {
+  console.log(`Express is running on port ${server.address().port}`);
+});
