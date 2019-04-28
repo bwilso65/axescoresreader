@@ -1,9 +1,13 @@
 {
   "name": "axescoresreader",
-  "version": "0.0.0",
+  "version": "0.1.0",
+  "engines": {
+    "node": "6.11.4"
+  }
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node app.js",
+	"build": "webpack"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
