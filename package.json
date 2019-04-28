@@ -1,6 +1,6 @@
 {
   "name": "axescoresreader",
-  "description": "different wrapper for axescores.com"
+  "description": "different wrapper for axescores.com",
   "version": "0.1.0",
   "scripts": {
     "start": "node app.js"
