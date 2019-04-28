@@ -1,18 +1,19 @@
 {
   "name": "axescoresreader",
+  "description": "different wrapper for axescores.com"
   "version": "0.1.0",
-  "engines": {
-    "node": "6.11.4"
-  },
   "scripts": {
     "start": "node app.js"
   },
+  "license": "MIT",
   "dependencies": {
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.16.0",
     "http-errors": "~1.6.2",
     "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
+    "pug": "2.0.0-beta11",
+	"cheerio": "^1.0.0-rc.3",
+	"axios": "^0.18.0"
   }
 }
