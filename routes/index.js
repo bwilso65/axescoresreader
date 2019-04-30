@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const $ = require('cheerio');
 const axios = require('axios');
+var moment = require('moment-timezone');
 
 const urlMonday = 'https://axescores.com/Schedule/55844'; //?w= to get weekly schedule.
 const urlTuesday = 'https://axescores.com/Schedule/55845';
@@ -39,19 +40,21 @@ router.get('/', function(req, res, next) {
 // });
 
 function determineBestUrlForCurrentDate(){
-	var today = new Date();
-	var day = today.getDay();
+	//var today = new Date();
+	//var day = today.getDay();
+	var now = moment();
+	var day = moment.tz(now, "America/Toronto").isoWeekday()
 	if(day == 1){
-		return urlMonday + "?w="+diff_weeks(today, startDateMon);
+		return urlMonday + "?w="+diff_weeks(now, startDateMon);
 	}
 	else if(day == 2){
-		return urlTuesday + "?w="+diff_weeks(today, startDateTues);
+		return urlTuesday + "?w="+diff_weeks(now, startDateTues);
 	}
 	else{return ""}
 }
 
 function diff_weeks(dt2, dt1) {
-  var diff =(dt2.getTime() - dt1.getTime()) / 1000;
+  var diff =(dt2.valueOf() - dt1.getTime()) / 1000;
   diff /= (60 * 60 * 24 * 7);
   return Math.abs(Math.round(diff)) + 1;
  }

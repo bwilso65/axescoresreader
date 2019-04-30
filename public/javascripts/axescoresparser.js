@@ -1,7 +1,7 @@
 $(function(){
 	if($(".error").html().length > 0){return}
 	parseHtml();
-	window.setTimeout(function(){reloadSchedule()}, 15000);
+	window.setTimeout(function(){reloadSchedule()}, 45000);
 });
 
 function reloadSchedule(){
